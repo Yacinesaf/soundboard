@@ -4,21 +4,20 @@ import PianoTile from './PianoTile';
 
 
 function App() {
-  const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, ...("abcdefghijklmnopqrstuvwxyz").split("")]
-  console.log(arr);
-  console.log(typeof 2);
+  const arr = [1]
+  // const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, ...("abcdefghijklmnopqrstuvwxyz").split("")]
   const upperCaseText = (text) => {
     return text.toUpperCase()
   }
 
   return (
-    <Grid container>
+    <Grid container justify='center' alignItems='center' style={{height : '100vh'}}>
       <Grid item xs={10}>
-        <Grid container>
+        <Grid container justify='center'>
           {arr.map((x, i) => {
             return (
-              <Grid key={i} item xs={1}>
-                <PianoTile tileName={x} audio={typeof x !== 'number' ? `../assets/sound${upperCaseText(x)}.wav` : `../assets/sound${x}.wav`} />
+              <Grid key={i} item xs={1} style={{padding : 10}}>
+                <PianoTile tileName={x} audio={typeof x !== 'number' ? `./assets/sound${upperCaseText(x)}.wav` : `./assets/sound${x}.wav`} />
               </Grid>
             )
           })}
