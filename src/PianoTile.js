@@ -39,7 +39,6 @@ import soundZ from './assets/soundZ.wav'
 
 function PianoTile({ tileName }) {
   function play() {
-    console.log(tileName);
     var audios = document.getElementById("audio");
     audios.play();
   }
@@ -84,8 +83,7 @@ function PianoTile({ tileName }) {
   }
   return (
     <div>
-      <audio id='audio' >
-        <source type='audio/wav' src={obj[`sound${tileName}`]} />
+      <audio id='audio' src={obj[`sound${tileName}`]}>
       </audio>
       <Button onClick={play} style={{ padding: 15, border: '2px solid grey', borderRadius: 5 }}>
         {tileName}
